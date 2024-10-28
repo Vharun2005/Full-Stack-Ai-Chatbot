@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+.sidenav{
+    padding-left: 15px;
+    height: 100%;
+    background-color: #d4d7da;
+    padding: 25px 15px;
+    display: inline-flex;
+    justify-content: space-between;
+    flex-direction: column;
+    font-family:"Outfit", sans-serif;
+    color: black;
+}
+.questions{
+  width: 70px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-bar{
+    width:200;
+    height: 200;
+    font-size: 40px;
+    display: block;
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 4px;
+    transition: 0.2s;
+}
+.menu-bar:hover{
+    background-color: #aaadb0;
+}
+.plus-bar{
+    display: inline-flex;
+    background-color: #e6eaf1;
+    align-items: center;
+    margin-top: 50px;
+    padding-top: 15px;
+    padding: 0px 15px;
+    border-radius: 50px;
+    color: grey;
+    cursor: pointer;
+
+}
+.bottom{
+    display: inline-flex;
+    flex-direction: column;
+}
+.RECENT-MAIN{
+    height: 200px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+}
+.recent-div{
+    margin-top: 10px;
+    align-items: center;
+    gap: 15px;
+    padding:  0px 15px;
+    border-radius: 50px;
+    background-color: rgb(216, 201, 201);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.recent-div:hover{
+    background-color:rgb(235, 229, 229) ;
+
+}
+.activity-div{
+   display: inline-flex;
+   gap: 10px;
+   cursor: pointer;
+   margin-top: 10px;
+}
+.setting-div{
+    display: inline-flex;
+    gap: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.help-div{
+    margin-top: 10px;
+    display: inline-flex;
+    gap: 10px;
+    cursor: pointer;
+}
+.plus{
+    font-size: 2rem;
+    
+}
+.recent{
+    font-weight: bolder;
+    font-size: 15px;
+}
+.activity{
+    font-size: 25px;
+    font-weight: bold;
+}
+.setting{
+    font-size: 25px;
+    font-weight: bold;
+}
+.help{
+    font-size: 25px;
+    font-weight: bold;
+}
+.recent-p{
+    margin-top: 10px;
+    margin-left: 5px;
+    position: relative;
+    top: 9px;
+}
