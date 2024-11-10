@@ -3,6 +3,8 @@ import "./login.css";
 import axios from "axios";
 import { BackendContext } from "../context/BackendContext";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
   const [username, setuserName] = useState("");
@@ -27,7 +29,7 @@ const Login = () => {
       setuserName("");
     } catch (error) {
       if (error.response) {
-        alert(error.response.data);
+        toast(error.response.data);
         setuserName("");
         setPassword("");
       } else {
@@ -37,6 +39,7 @@ const Login = () => {
   };
   return (
     <div>
+      <ToastContainer position='top-center'/>
       <p
         className="fs-1 fw-medium text-center mt-2 mb-1"
         style={{ color: "#6084af" }}
@@ -55,7 +58,6 @@ const Login = () => {
               className="cus-input-signup mt-2"
               value={username}
               onChange={(e) => setuserName(e.target.value)}
-              type="password"  
             ></input>
           </div>
           <div className="d-flex flex-column mt-3">
@@ -65,6 +67,7 @@ const Login = () => {
               className="cus-input-signup mt-2"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              type="password"
             ></input>
           </div>
           <div className="text-end mt-2">
