@@ -13,7 +13,7 @@ const Login = () => {
   const login = async () => {
     try {
       const loginuser = await axios.post(
-        "http://localhost:3500/api/loginuser",
+        "https://full-stack-ai-chatbot-1.onrender.com/api/loginuser",
         { username: username, password: password }
       );
       const token = await loginuser.data;
@@ -55,6 +55,7 @@ const Login = () => {
               className="cus-input-signup mt-2"
               value={username}
               onChange={(e) => setuserName(e.target.value)}
+              type="password"  
             ></input>
           </div>
           <div className="d-flex flex-column mt-3">
