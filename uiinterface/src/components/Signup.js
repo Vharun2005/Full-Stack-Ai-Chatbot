@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import "./signup.css";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
 import { useNavigate } from "react-router-dom";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
   const [username, setuserName] = useState("");
@@ -17,14 +19,14 @@ const Signup = () => {
         { username: username, password: password }
       );
       const alertmessage = await postmessage.data;
-      alert(alertmessage);
+      toast(alertmessage);
       navigate("/login");
       setuserName("");
       setPassword("");
     } catch (error) {
       if (error.response) {
         console.log(error.response.status); // 401
-        alert(error.response.data); // User already exists
+        toast(error.response.data); // User already exists
       } else {
         console.log("An unexpected error occurred:", error);
       }
@@ -33,6 +35,7 @@ const Signup = () => {
 
   return (
     <div>
+      <ToastContainer position='top-center'/>
       <p
         className="fs-1 fw-medium text-center mt-2 mb-1"
         style={{ color: "#6084af" }}
@@ -74,6 +77,7 @@ const Signup = () => {
             <p className="text-end"><a href="/login" className="link">login</a></p>
           </div>
         </form>
+        
       </section>
     </div>
   );
