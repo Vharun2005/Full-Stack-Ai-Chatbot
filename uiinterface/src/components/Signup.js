@@ -13,7 +13,7 @@ const Signup = () => {
   const signup = async () => {
     try {
       const postmessage = await axios.post(
-        "http://localhost:3500/api/reguser",
+        "https://full-stack-ai-chatbot-1.onrender.com/api/reguser",
         { username: username, password: password }
       );
       const alertmessage = await postmessage.data;
@@ -71,6 +71,7 @@ const Signup = () => {
             >
               Sign Up
             </button>
+            <p className="text-end"><a href="/login" className="link">login</a></p>
           </div>
         </form>
       </section>
