@@ -7,17 +7,22 @@ import { useNavigate } from "react-router-dom";
 import 'react-toastify/dist/ReactToastify.css';
 
 const Signup = () => {
+  const[loading,setloading] = useState(false)
   const [username, setuserName] = useState("");
   const [password, setPassword] = useState("");
+  const [response,setResponse] = useState('')
   const [visible, setVisible] = useState("password");
   const navigate = useNavigate();
 
   const signup = async () => {
+    
     try {
+      setloading(true)
       const postmessage = await axios.post(
         "https://full-stack-ai-chatbot-1.onrender.com/api/reguser",
         { username: username, password: password }
       );
+
       const alertmessage = await postmessage.data;
       toast(alertmessage);
       navigate("/login");
@@ -30,11 +35,16 @@ const Signup = () => {
       } else {
         console.log("An unexpected error occurred:", error);
       }
+    }finally {
+      setloading(false);
     }
   };
 
   return (
     <div>
+      <div className="container">
+        <p className={loading ? 'loader' :''}></p>
+      </div>
       <ToastContainer position='top-center'/>
       <p
         className="fs-1 fw-medium text-center mt-2 mb-1"
@@ -42,8 +52,8 @@ const Signup = () => {
       >
         Gemini AI
       </p>
-      <section className="d-flex justify-content-center align-items-center  w-100 h-100">
-        <form className="border rounded mt-3 cus-form p-2 mb-3">
+      <section className="d-flex justify-content-center align-items-center   h-100">
+        <form className="border rounded mt-3 cus-div p-2 mb-3">
           <h2 className="text-center p-2">
             <span>Sign Up</span>
           </h2>
